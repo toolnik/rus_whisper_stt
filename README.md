@@ -1,35 +1,51 @@
-Проведено дообучение модели "small" от OpenAI Whisper для русского языка на датасете Sber-golos.
-Исходная предобученная модель взята с GitHub: https://github.com/openai/whisper
-Обучение проводилось на данных из статьи https://habr.com/ru/company/sberdevices/blog/559496/
-Данные для обучения были взяты с GitHub: https://github.com/sberdevices/golos?tab=readme-ov-file
+# Fine-tuning OpenAI Whisper "small" Model for Russian Language on Sber-golos Dataset
 
-Дообучение проведено на данных из train_crowd0.tar - 11 GB, что составляет 10% от общего количества данных. 
-Обучение длилось 1522 минуты - 16,42 эпохи. Лучшее значение WER - 22.899838% (на 5% от полного размера теста - test.tar - 1.3 GB) было получено на шаге - 5300 - 6,8 эпохи. Для сравнения, тест на тех же данных модели "small" от OpenAI Whisper дает точность WER=62,96%
-Дообученая модель на 100% размера теста - test.tar - 1.3 GB дает точность около WER = 26%.
+## Overview
+This project involves fine-tuning the "small" model from OpenAI Whisper for the Russian language using the Sber-golos dataset. The original pre-trained model was sourced from [OpenAI Whisper GitHub](https://github.com/openai/whisper). The training data was obtained from the article [SberDevices on Habr](https://habr.com/ru/company/sberdevices/blog/559496/) and the [Sber-golos GitHub repository](https://github.com/sberdevices/golos?tab=readme-ov-file).
 
-Ноутбук my_whisper.ipynb с кодом доступен для скачивания по ссылке - https://disk.yandex.ru/d/k2H0gaLWm1uB5A
-Логи обучения tensorboard runs.zip доступены для скачивания по ссылке - https://disk.yandex.ru/d/Ll-9QdJejKfgcw
-Для продолжения обучения модели лучший чекпоинт в архиве checkpoint-6300.zip можно скачать по ссылке - https://disk.yandex.ru/d/BVQlOYwQF6o8Dg
-Сохраненную модель в архиве docker.zip с возможностью  развертывания веб-приложения с использованием Docker можно скачать по ссылке - https://disk.yandex.ru/d/6y-0dg-vg752Fw
-Одной из целей данного проекта было найти оптимальные гиперпараметры для обучения модели "small" от OpenAI Whisper и получение наилучшего значения WER в условиях меньшего датасета. 
-В связи особенность датасета Sber-golos дообучение модель утратила способность расставлять пунктуацию.
-Ноутбуке my_whisper.ipynb доступен для скацивания на GitHub.
+## Training Details
+- **Dataset Used**: `train_crowd0.tar` (11 GB, 10% of the total data).
+- **Training Duration**: 1522 minutes (16.42 epochs).
+- **Best WER**: 22.899838% (achieved at step 5300, 6.8 epochs) on 5% of the test data (`test.tar` - 1.3 GB).
+- **Comparison**: The original "small" model from OpenAI Whisper achieves WER = 62.96% on the same test data.
+- **Final Model Performance**: WER ≈ 26% on 100% of the test data (`test.tar` - 1.3 GB).
 
+## Model Artifacts
+- **Notebook**: The `my_whisper.ipynb` notebook with the training code is available for download [here](https://disk.yandex.ru/d/k2H0gaLWm1uB5A).
+- **Training Logs**: TensorBoard logs (`runs.zip`) can be downloaded [here](https://disk.yandex.ru/d/Ll-9QdJejKfgcw).
+- **Checkpoint**: The best checkpoint (`checkpoint-6300.zip`) for continuing training is available [here](https://disk.yandex.ru/d/BVQlOYwQF6o8Dg).
+- **Docker Deployment**: The saved model (`docker.zip`) with a web application deployment setup using Docker can be downloaded [here](https://disk.yandex.ru/d/6y-0dg-vg752Fw).
 
-English:
-The "small" model from OpenAI Whisper for the Russian language was retrained on the Sber-golos dataset.
-The original pre-trained model was taken from GitHub: https://github.com/openai/whisper
-Training was carried out on data from the article https://habr.com/ru/company/sberdevices/blog/559496/
-Training data was taken from GitHub: https://github.com/sberdevices/golos?tab=readme-ov-file
+## Project Goals
+One of the primary objectives of this project was to identify optimal hyperparameters for fine-tuning the "small" OpenAI Whisper model and achieve the best possible WER under limited dataset conditions. Due to the specific characteristics of the Sber-golos dataset, the fine-tuned model lost its ability to place punctuation.
 
-Retraining was carried out on data from train_crowd0.tar - 11 GB, which is 10% of the total data.
-Training lasted 1522 minutes - 16.42 epochs. The best WER value - 22.899838% (on 5% of the full test size - test.tar - 1.3 GB) was obtained at step - 5300 - 6.8 epochs. For comparison, a test on the same data of the "small" model from OpenAI Whisper gives an accuracy of WER = 62.96%
-The retrained model on 100% of the test size - test.tar - 1.3 GB gives an accuracy of about WER = 26%.
+## Notebook Availability
+The `my_whisper.ipynb` notebook is available for download on GitHub.
 
-The my_whisper.ipynb notebook with the code is available for download at the link - https://disk.yandex.ru/d/k2H0gaLWm1uB5A
-Tensorboard runs.zip training logs are available for download at the link - https://disk.yandex.ru/d/Ll-9QdJejKfgcw
-To continue training the model, the best checkpoint in the checkpoint-6300.zip archive can be downloaded at the link - https://disk.yandex.ru/d/BVQlOYwQF6o8Dg
-The saved model in the docker.zip archive with the ability to deploy a web application using Docker can be downloaded at the link - https://disk.yandex.ru/d/6y-0dg-vg752Fw
-One of the goals of this project was to find the optimal hyperparameters for training the "small" model from OpenAI Whisper and obtain the best WER value under conditions of lower dataset.
-Due to the peculiarity of the Sber-golos dataset, the model lost the ability to place punctuation after additional training.
-The my_whisper.ipynb notebook is available for download on GitHub.
+---
+
+## Русская версия
+
+# Fine-tuning OpenAI Whisper "small" Model for Russian Language on Sber-golos Dataset
+
+## Обзор
+Этот проект включает дообучение модели "small" от OpenAI Whisper для русского языка на датасете Sber-golos. Исходная предобученная модель была взята с [GitHub OpenAI Whisper](https://github.com/openai/whisper). Данные для обучения были получены из статьи [SberDevices на Habr](https://habr.com/ru/company/sberdevices/blog/559496/) и репозитория [Sber-golos на GitHub](https://github.com/sberdevices/golos?tab=readme-ov-file).
+
+## Детали обучения
+- **Используемый датасет**: `train_crowd0.tar` (11 ГБ, 10% от общего объема данных).
+- **Длительность обучения**: 1522 минуты (16.42 эпох).
+- **Лучший WER**: 22.899838% (достигнут на шаге 5300, 6.8 эпох) на 5% тестовых данных (`test.tar` - 1.3 ГБ).
+- **Сравнение**: Оригинальная модель "small" от OpenAI Whisper показывает WER = 62.96% на тех же тестовых данных.
+- **Производительность финальной модели**: WER ≈ 26% на 100% тестовых данных (`test.tar` - 1.3 ГБ).
+
+## Артефакты модели
+- **Ноутбук**: Ноутбук `my_whisper.ipynb` с кодом обучения доступен для скачивания [здесь](https://disk.yandex.ru/d/k2H0gaLWm1uB5A).
+- **Логи обучения**: Логи TensorBoard (`runs.zip`) можно скачать [здесь](https://disk.yandex.ru/d/Ll-9QdJejKfgcw).
+- **Чекпоинт**: Лучший чекпоинт (`checkpoint-6300.zip`) для продолжения обучения доступен [здесь](https://disk.yandex.ru/d/BVQlOYwQF6o8Dg).
+- **Docker-развертывание**: Сохраненная модель (`docker.zip`) с возможностью развертывания веб-приложения с использованием Docker доступна [здесь](https://disk.yandex.ru/d/6y-0dg-vg752Fw).
+
+## Цели проекта
+Одной из основных целей проекта было нахождение оптимальных гиперпараметров для дообучения модели "small" от OpenAI Whisper и достижение наилучшего значения WER при ограниченном объеме данных. Из-за особенностей датасета Sber-golos модель утратила способность расставлять пунктуацию.
+
+## Доступность ноутбука
+Ноутбук `my_whisper.ipynb` доступен для скачивания на GitHub.
