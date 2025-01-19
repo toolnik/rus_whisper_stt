@@ -16,6 +16,7 @@
 Ноутбуке my_whisper.ipynb доступен для скацивания на GitHub.
 
 
+English:
 The "small" model from OpenAI Whisper for the Russian language was retrained on the Sber-golos dataset.
 The original pre-trained model was taken from GitHub: https://github.com/openai/whisper
 Training was carried out on data from the article https://habr.com/ru/company/sberdevices/blog/559496/
