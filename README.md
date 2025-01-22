@@ -15,6 +15,9 @@ This project involves fine-tuning the "small" model from OpenAI Whisper for the 
 - **Training Logs**: TensorBoard logs (`runs.zip`) can be downloaded [here](https://disk.yandex.ru/d/Ll-9QdJejKfgcw).
 - **Checkpoint**: The best checkpoint (`checkpoint-6300.zip`) for continuing training is available [here](https://disk.yandex.ru/d/BVQlOYwQF6o8Dg).
 - **Docker Deployment**: The saved model (`docker.zip`) with a web application deployment setup using Docker can be downloaded [here](https://disk.yandex.ru/d/6y-0dg-vg752Fw).
+Build the image: docker build -t my_whisper-app .
+Run the container without a GPU: docker run -d -p 80:80 my_whisper-app
+Run the container using a GPU: docker run --gpus all -d -p 80:80 my_whisper-app
 
 ## Project Goals
 One of the primary objectives of this project was to identify optimal hyperparameters for fine-tuning the "small" OpenAI Whisper model and achieve the best possible WER under limited dataset conditions. Due to the specific characteristics of the Sber-golos dataset, the fine-tuned model lost its ability to place punctuation.
@@ -43,10 +46,12 @@ The `my_whisper.ipynb` notebook is available for download on GitHub.
 - **Логи обучения**: Логи TensorBoard (`runs.zip`) можно скачать [здесь](https://disk.yandex.ru/d/Ll-9QdJejKfgcw).
 - **Чекпоинт**: Лучший чекпоинт (`checkpoint-6300.zip`) для продолжения обучения доступен [здесь](https://disk.yandex.ru/d/BVQlOYwQF6o8Dg).
 - **Docker-развертывание**: Сохраненная модель (`docker.zip`) с возможностью развертывания веб-приложения с использованием Docker доступна [здесь](https://disk.yandex.ru/d/6y-0dg-vg752Fw).
+Сборка образа: docker build -t my_whisper-app .
+Запуск контейнера без GPU: docker run -d -p 80:80 my_whisper-app
+Запуск контейнера c использованием GPU: docker run --gpus all -d -p 80:80 my_whisper-app
 
 ## Цели проекта
 Одной из основных целей проекта было нахождение оптимальных гиперпараметров для дообучения модели "small" от OpenAI Whisper и достижение наилучшего значения WER при ограниченном объеме данных. Из-за особенностей датасета Sber-golos модель утратила способность расставлять пунктуацию.
 
 ## Доступность ноутбука
 Ноутбук `my_whisper.ipynb` доступен для скачивания на GitHub.
-
