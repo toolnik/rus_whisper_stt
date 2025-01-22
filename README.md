@@ -1,5 +1,5 @@
 # Fine-tuning OpenAI Whisper "small" Model for Russian Language on Sber-golos Dataset
-
+![Project Overview](image.png)
 ## Overview
 This project involves fine-tuning the "small" model from OpenAI Whisper for the Russian language using the Sber-golos dataset. The original pre-trained model was sourced from [OpenAI Whisper GitHub](https://github.com/openai/whisper). The training data was obtained from the article [SberDevices on Habr](https://habr.com/ru/company/sberdevices/blog/559496/) and the [Sber-golos GitHub repository](https://github.com/sberdevices/golos?tab=readme-ov-file).
 
@@ -49,3 +49,4 @@ The `my_whisper.ipynb` notebook is available for download on GitHub.
 
 ## Доступность ноутбука
 Ноутбук `my_whisper.ipynb` доступен для скачивания на GitHub.
+
